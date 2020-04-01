@@ -6,7 +6,8 @@ import {
   Text,
   MinorTitle,
   Grid,
-  GridImage
+  GridImage,
+  Toggle
 } from "./components";
 
 import "./index.css";
@@ -15,6 +16,7 @@ const App = () => {
   return (
     <>
       <section>
+        <Toggle />
         <Title>Kate O'Brien</Title>
         <SubTitle>Full-stack developer</SubTitle>
         <Text>
@@ -31,7 +33,7 @@ const App = () => {
         </Text>
         <Text>Check out my previous work -----></Text>
         <Text>
-          If you have any cool opertunities, give a shout! my email is
+          If you have any cool opertunities, give a shout! My email is
           dubhcait@live.ie
         </Text>
       </section>
