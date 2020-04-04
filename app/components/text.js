@@ -24,7 +24,7 @@ const SubTitle = styled.h2`
 
 const Text = styled.p`
   font-family: "Cutive Mono", monospace;
-  max-width: 268px;
+  max-width: ${(props) => props.width || "268px"};
   font-style: normal;
   font-weight: normal;
   font-size: 12px;

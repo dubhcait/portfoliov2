@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 const Grid = styled.ul`
@@ -17,4 +18,26 @@ const Grid = styled.ul`
   }
 `;
 
+const GridImage = styled.img`
+  display: block;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
+
+const GridLink = styled.a`
+  display: block;
+  height: 100%;
+`;
+
+const GridItem = ({ source, onGrideItemCLick, project }) => (
+  <li>
+    <GridLink href="#" onClick={() => onGrideItemCLick(project)}>
+      <GridImage src={source} alt="" />
+    </GridLink>
+  </li>
+);
+
+export { GridItem, GridImage };
 export default Grid;

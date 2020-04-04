@@ -1,24 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import {
-  Title,
+  Grid,
+  GridItem,
+  MinorTitle,
+  Modal,
+  ProjectView,
   SubTitle,
   Text,
-  MinorTitle,
-  Grid,
-  GridImage,
-  Toggle
+  Title,
+  Toggle,
 } from "./components";
-
 import "./index.css";
 
 const App = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [showItem, setShowItem] = useState("");
+
+  const onGrideItemCLick = (project) => {
+    setShowItem(project);
+    setShowModal(true);
+  };
   return (
     <>
-      <section>
+      <section style={{ position: "relative", paddingBottom: "20px" }}>
+        {/* <Game /> */}
+        {showModal && (
+          <Modal
+            setShowModal={setShowModal}
+            canClose={true}
+            showItem={showItem}
+          >
+            <ProjectView project={showItem} />
+          </Modal>
+        )}
         <Toggle />
         <Title>Kate O'Brien</Title>
-        <SubTitle>Full-stack developer</SubTitle>
+        <SubTitle>Full Stack Developer</SubTitle>
         <Text>
           I aim to ask good question because the right solution to the wrong
           problem isn’t much use. Value is something we have to chase as
@@ -26,67 +44,99 @@ const App = () => {
         </Text>
         <MinorTitle>Experience</MinorTitle>
         <Text style={{ marginTop: 0 }}>
-          Fullstack developer @ Fluidly <br /> Founders Program @
-          Founders&Coders
+          Fullstack developer @{" "}
+          <a href="https://fluidly.com/" target="_blank">
+            Fluidly
+          </a>
+          <br /> Volunteer developer @
+          <a
+            href="https://github.com/PrideInLondon/pride-london-web"
+            target="_blank"
+          >
+            {" "}
+            PrideinLondon
+          </a>
+          <br /> Founders Program @{" "}
+          <a href="https://www.foundersandcoders.com/" target="_blank">
+            Founders&Coders
+          </a>
           <br />
-          BootCamp @ Founders&Coders
+          BootCamp @{" "}
+          <a href="https://www.foundersandcoders.com/" target="_blank">
+            Founders&Coders
+          </a>
         </Text>
-        <Text>Check out my previous work -----></Text>
+        <Text>Check out some of my previous work.</Text>
         <Text>
           If you have any cool opertunities, give a shout! My email is
           dubhcait@live.ie
         </Text>
+        <li
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
+            position: "absolute",
+            bottom: 0,
+          }}
+        >
+          <Text>
+            {" "}
+            Icons from{" "}
+            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+              Freepik
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.flaticon.com/authors/roundicons"
+              title="Roundicons"
+            >
+              Roundicons
+            </a>
+          </Text>
+        </li>
       </section>
       <Grid className="">
-        <li>
-          <a href="#">
-            <GridImage
-              src="https://camo.githubusercontent.com/0305b82409b925e9f9f1516f86b7d7dbc15d0803/68747470733a2f2f692e696d6775722e636f6d2f484645706630412e706e67"
-              alt=""
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage
-              src="https://camo.githubusercontent.com/8a13a7e972ffaa9137231c1a886d89de9b0b1036/68747470733a2f2f692e696d6775722e636f6d2f636354556336352e706e67"
-              alt=""
-            />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage src="https://i.imgur.com/SjEeQSH.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage src="https://i.imgur.com/SjEeQSH.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage src="https://i.imgur.com/lLJpxng.png" alt="" />>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage src="https://i.imgur.com/wjKlKEd.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage src="https://i.imgur.com/G2cx6xm.png" alt="" />
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <GridImage
-              src="https://user-images.githubusercontent.com/3824082/33515921-50e4fd80-d7a4-11e7-9971-9afac36f02e1.png"
-              alt=""
-            />
-          </a>
-        </li>
+        <GridItem
+          source="https://i.imgur.com/mziz9e1.jpg"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project1"
+        />
+        <GridItem
+          source="https://i.imgur.com/edRqeaz.png"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project2"
+        />
+        <GridItem
+          source="https://i.imgur.com/TSLm7vn.jpg"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project3"
+        />
+        <GridItem
+          source="https://i.imgur.com/TGL28vT.png"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project4"
+        />
+        <GridItem
+          source="https://i.imgur.com/I63HA3P.jpg"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project5"
+        />
+        <GridItem
+          source="https://i.imgur.com/SEhDqhj.png"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project6"
+        />
+        <GridItem
+          source="https://i.imgur.com/5PHOL9s.jpg"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project7"
+        />
+        <GridItem
+          source="https://i.imgur.com/z5ejMsI.png"
+          onGrideItemCLick={onGrideItemCLick}
+          project="project8"
+        />
       </Grid>
     </>
   );
