@@ -1,4 +1,3 @@
-import Game from "./game";
 import Grid, { GridImage, GridItem } from "./grid";
 import { XIcon } from "./icons";
 import Modal from "./modal";
@@ -18,5 +17,4 @@ export {
   Modal,
   ProjectView,
   XIcon,
-  Game,
 };

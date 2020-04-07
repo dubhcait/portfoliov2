@@ -34,7 +34,7 @@ const App = () => {
             <ProjectView project={showItem} />
           </Modal>
         )}
-        <Toggle />
+        {/* <Toggle /> */}
         <Title>Kate O'Brien</Title>
         <SubTitle>Full Stack Developer</SubTitle>
         <Text>
